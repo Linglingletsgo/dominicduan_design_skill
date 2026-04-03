@@ -1,6 +1,6 @@
 ---
 name: dominicduan-design-skill
-description: Use when initiating a rigorous modern art or fashion design project, when requiring full conceptual deduction from theoretical bases to technical implementation, or when explicitly asked to invoke dominicduan_design_skill.
+description: Use when initiating a rigorous identity related art project, when requiring full conceptual deduction from theoretical bases to technical implementation, or when explicitly asked to invoke dominicduan_design_skill.
 ---
 
 # Dominic Duan Design Skill
@@ -10,7 +10,7 @@ A rigorous, fully-automated modern art design workflow. It bridges deep theoreti
 
 ## When to Use
 - When explicitly asked to use `dominicduan_design_skill` or `dominicduan-design-skill`.
-- When starting an interdisciplinary art, fashion, or tech project requiring deep academic grounding.
+- When starting an identity related interdisciplinary art design project requiring deep academic grounding.
 - When you need to deduce an artistic design workflow systematically based on philosophical literature.
 
 ## Initialization & Default Parameters
