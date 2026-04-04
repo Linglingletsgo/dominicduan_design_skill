@@ -25,28 +25,28 @@ Before executing the workflow, you MUST present the defaults and ask the user fo
 ## The 6-Step Fully Automated Workflow
 
 **CRITICAL RULE: TREE-STRUCTURED DOCUMENTATION MATRIX**
-From Step 2 onwards, you MUST NOT write generic global documents. You must loop over each branch deduced in Step 1, executing deep reasoning and generating specific outputs documents **INSIDE each respective `schemes/branch_{X}/` folder**. This creates a massive, divergent matrix of research files. Ensure absolutely **no empty folders** remain at the end of the project. Do not pause execution unless requiring human fallback.
+Every file and folder for this project MUST reside inside a single top-level master folder named after the user's defined theme. From Step 2 onwards, you MUST loop over each branch deduced in Step 1, executing deep reasoning and generating specific outputs documents **INSIDE each respective `[ThemeName]/schemes/branch_{X}/` folder**. This creates a massive, divergent matrix of research files inside the master theme envelope. Ensure absolutely **no empty folders** remain at the end of the project. Do not pause execution unless requiring human fallback.
 
 ### Step 1: Context Building & Radical Divergence (语境构建与发散)
 - **Action**: Conduct keyword divergence based strictly on the defined theme and philosophy.
 - **Divergence**: You MUST deduce 3 to 5 mutually exclusive, radical scheme branches.
-- **Structure**: Execute `python scripts/build_project_tree.py "[Branch1]" "[Branch2]" ...` substituting your deduced names. This automatically scaffolds the exact `schemes/branch_X/` architecture.
-- **Document**: Output `01_brainstorming_and_divergence.md` at the root directory.
+- **Structure**: Execute `python scripts/build_project_tree.py "[ThemeName]" "[Branch1]" "[Branch2]" ...` substituting the sanitized theme name and your deduced branch names. This automatically scaffolds the `[ThemeName]/schemes/branch_X/` architecture.
+- **Document**: Output `01_brainstorming_and_divergence.md` at the `[ThemeName]/` root directory.
 
 ### Step 2: Academic Research (Shared) & Branch-Specific Multimodal Analysis
-- **Action (Shared Research)**: Use `browser_subagent` to download DOIs/books to `_research_pdfs/`. Pause ONLY if captchas completely block you, asking the user to manually provide the PDFs.
-- **Image Extraction (Shared)**: Execute `python scripts/extract_pdf_vision.py _research_pdfs _extracted_images`.
+- **Action (Shared Research)**: Use `browser_subagent` to download DOIs/books to `[ThemeName]/_research_pdfs/`. Pause ONLY if captchas completely block you, asking the user to manually provide the PDFs.
+- **Image Extraction (Shared)**: Execute `python scripts/extract_pdf_vision.py [ThemeName]/_research_pdfs [ThemeName]/_extracted_images`.
 - **Branch-Specific Analysis**: For EVERY branch deduced in Step 1, use `view_file` to read the global PDFs and extracted images precisely through the theoretical lens of *that specific branch*.
-- **Document**: Output `02_literature_analysis.md` **INSIDE each respective branch's folder** (e.g., `schemes/branch_1_A/02_literature_analysis.md`).
+- **Document**: Output `02_literature_analysis.md` **INSIDE each respective branch's folder** (e.g., `[ThemeName]/schemes/branch_1_A/02_literature_analysis.md`).
 
 ### Step 3: Branch-Specific Deep Philosophical Deduction & System Architecture
 - **Deep Thinking**: Provide extensive `<thinking>` reasoning for each branch independently. 
 - **Deduction**: Establish the rigorous Philosophical Deduction, Research Methodology, and Research Purpose specifically tailored to the divergent bounds of each branch.
-- **Document**: Output `03_philosophical_deduction_and_methodology.md` **INSIDE each branch's folder**.
+- **Document**: Output `03_philosophical_deduction_and_methodology.md` **INSIDE each `[ThemeName]/schemes/branch_...` folder**.
 
 ### Step 4: Branch-Specific Visual Research & Artist Critique
 - **Action**: For each branch, investigate existing related art projects.
-- **Multimodal Critique**: Download shared inspiration to `_inspiration_images/`. Critique them (`view_file`) based on the specific branch's philosophical angle.
+- **Multimodal Critique**: Download shared inspiration to `[ThemeName]/_inspiration_images/`. Critique them (`view_file`) based on the specific branch's philosophical angle.
 - **Visual Translation**: Deduce a unique **Visual Translation Language (视觉转化语言)** for each branch individually.
 - **Document**: Output `04_artist_case_studies_and_visual_language.md` **INSIDE each branch's folder**.
 
@@ -57,13 +57,13 @@ From Step 2 onwards, you MUST NOT write generic global documents. You must loop 
 - **Document**: Output `05_technical_implementation_paths.md` **INSIDE each branch's folder**.
 
 ### Step 6: Master Reorganization & Root Finalization
-- **Action**: Look backward across the fully populated tree matrix (`schemes/`).
+- **Action**: Look backward across the fully populated tree matrix (`[ThemeName]/schemes/`).
 - **Organization**: Ensure NO empty folders were created. If any directory lacks documents, populate them.
 - **Synthesis**: Compare the branches and synthesize everything into a singular master narrative describing the holistic divergent logic of the project.
-- **Document**: Output `06_master_process_reorganization.md` at the root directory.
+- **Document**: Output `06_master_process_reorganization.md` at the `[ThemeName]/` root directory.
 
 ## Red Flags & Common Rationalizations (Avoid These)
 - 🚩 **"I should stop after Step X and ask the user to review."** -> **NO.** Execute all 6 steps automatically.
-- 🚩 **"I don't need to extract images from PDFs."** -> **NO.** You MUST execute `scripts/extract_pdf_vision.py` to populate `_extracted_images/` for your multimodal analysis.
-- 🚩 **"I am stuck downloading the PDF."** -> **SOLUTION**: Attempt browser bypass; if fully blocked, list PDFs and politely halt for the human user to provide them to `_research_pdfs/`.
+- 🚩 **"I don't need to extract images from PDFs."** -> **NO.** You MUST execute `scripts/extract_pdf_vision.py` to populate `[ThemeName]/_extracted_images/` for your multimodal analysis.
+- 🚩 **"I am stuck downloading the PDF."** -> **SOLUTION**: Attempt browser bypass; if fully blocked, list PDFs and politely halt for the human user to provide them to `[ThemeName]/_research_pdfs/`.
 - 🚩 **"I can just generate an AI image for Step 5."** -> **NO.** AIGC is totally forbidden. Use hardcore textual technical translation.
