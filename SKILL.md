@@ -34,9 +34,10 @@ Every file and folder for this project MUST reside inside a single top-level mas
 - **Document**: Output `01_brainstorming_and_divergence.md` at the `[ThemeName]/` root directory.
 
 ### Step 2: Academic Research (Shared) & Branch-Specific Multimodal Analysis
-- **Action (Shared Research)**: Use `browser_subagent` to download DOIs/books to `[ThemeName]/_research_pdfs/`. Pause ONLY if captchas completely block you, asking the user to manually provide the PDFs.
+- **Action (Pre-Check Existing Material)**: The user may have manually provided foundational materials. Check if a root `_research_pdfs/` or `[ThemeName]/_research_pdfs/` contains pre-provided PDFs or markdown book lists. Read and incorporate these existing materials FIRST. Move any root-level provided materials into `[ThemeName]/_research_pdfs/`.
+- **Action (Shared Web Research)**: Use `browser_subagent` to hunt / download additional required DOIs/books to `[ThemeName]/_research_pdfs/`. Pause ONLY if captchas completely block you, asking the user to manually provide the missing PDFs.
 - **Image Extraction (Shared)**: Execute `python scripts/extract_pdf_vision.py [ThemeName]/_research_pdfs [ThemeName]/_extracted_images`.
-- **Branch-Specific Analysis**: For EVERY branch deduced in Step 1, use `view_file` to read the global PDFs and extracted images precisely through the theoretical lens of *that specific branch*.
+- **Branch-Specific Analysis**: For EVERY branch deduced in Step 1, use `view_file` to read the entire pool of global PDFs (both user-provided and agent-downloaded) and their extracted images, strictly through the theoretical lens of *that specific branch*.
 - **Document**: Output `02_literature_analysis.md` **INSIDE each respective branch's folder** (e.g., `[ThemeName]/schemes/branch_1_A/02_literature_analysis.md`).
 
 ### Step 3: Branch-Specific Deep Philosophical Deduction & System Architecture
