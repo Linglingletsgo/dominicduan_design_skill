@@ -9,7 +9,6 @@ def build_tree(theme, branches):
         
     base_dirs = [
         f"{clean_theme}/_research_pdfs",
-        f"{clean_theme}/_extracted_images",
         f"{clean_theme}/_inspiration_images"
     ]
     

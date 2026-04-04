@@ -29,14 +29,14 @@ Every file and folder for this project MUST reside inside a single top-level mas
 
 ### Step 1: The Dual-State Brainstorming Matrix (双态头脑风暴大矩阵)
 - **State A (Free Divergence)**: Conduct a completely free, unconstrained brainstorm based purely on the raw abstract theme. Deduce exactly **5 independent "Free-State"** scheme branches.
-- **Academic Grounding**: Pause divergence. Check if a root `_research_pdfs/` or `[ThemeName]/_research_pdfs/` contains user-provided PDFs/book lists. If missing, use `browser_subagent` to download foundational literature to `[ThemeName]/_research_pdfs/`. Execute `python scripts/extract_pdf_vision.py [ThemeName]/_research_pdfs [ThemeName]/_extracted_images`. Read these texts/images to grasp strict academic limits.
+- **Academic Grounding**: Pause divergence. First, check if a root `_research_pdfs/` or `[ThemeName]/_research_pdfs/` contains user-provided PDFs/book lists to ingest them. **Crucially**, even if user-provided references are present, you MUST still use `browser_subagent` to actively hunt and download massive amounts of additional foundational literature and new academic papers to `[ThemeName]/_research_pdfs/`. Read these dense PDF texts thoroughly to grasp strict academic limits. Do NOT attempt to extract images from PDFs.
 - **State B (Constrained Divergence)**: Conduct a *second*, completely independent brainstorm strictly bound by the academic limits you just digested. Deduce exactly **5 separate "Constrained-State"** scheme branches.
 - **Consolidation**: Do NOT overwrite State A. Treat the Free-State and Constrained-State branches as parallel universes. Organize and combine them, merging only obviously overlapping concepts. You will proceed with up to **10 distinct, parallel scheme branches** encompassing both pure freedom and rigorous constraint.
 - **Structure**: Execute `python scripts/build_project_tree.py "[ThemeName]" "[Free_Branch1]" "[Constrained_Branch1]" ...` substituting the sanitized theme name and *all* your consolidated dual-state branch names. This scaffolds the massive `[ThemeName]/schemes/branch_X/` architecture.
 - **Document**: Output `01_dual_state_brainstorming.md` at the `[ThemeName]/` root directory.
 
 ### Step 2: Branch-Specific Multimodal Analysis (分支特定沉浸解析)
-- **Branch-Specific Reading**: Now that the tree is structurally built, loop over EVERY final branch. Use `view_file` to extensively re-read the global PDFs and extracted images precisely through the theoretical lens of *that specific branch*.
+- **Branch-Specific Reading**: Now that the tree is structurally built, loop over EVERY final branch. Use `view_file` to extensively re-read the global PDF texts precisely through the theoretical lens of *that specific branch*.
 - **Document**: Output `02_branch_literature_analysis.md` **INSIDE each respective branch's folder** (e.g., `[ThemeName]/schemes/branch_1_A/02_branch_literature_analysis.md`).
 
 ### Step 3: Branch-Specific Deep Philosophical Deduction & System Architecture
@@ -64,6 +64,6 @@ Every file and folder for this project MUST reside inside a single top-level mas
 
 ## Red Flags & Common Rationalizations (Avoid These)
 - 🚩 **"I should stop after Step X and ask the user to review."** -> **NO.** Execute all 6 steps automatically.
-- 🚩 **"I don't need to extract images from PDFs."** -> **NO.** You MUST execute `scripts/extract_pdf_vision.py` to populate `[ThemeName]/_extracted_images/` for your multimodal analysis.
+- 🚩 **"The user provided some PDFs, so I don't need to search"** -> **NO.** You MUST execute massively extended research and download new papers into `[ThemeName]/_research_pdfs/` regardless of provided files.
 - 🚩 **"I am stuck downloading the PDF."** -> **SOLUTION**: Attempt browser bypass; if fully blocked, list PDFs and politely halt for the human user to provide them to `[ThemeName]/_research_pdfs/`.
 - 🚩 **"I can just generate an AI image for Step 5."** -> **NO.** AIGC is totally forbidden. Use hardcore textual technical translation.
