@@ -27,12 +27,13 @@ Before executing the workflow, you MUST present the defaults and ask the user fo
 **CRITICAL RULE: TREE-STRUCTURED DOCUMENTATION MATRIX**
 Every file and folder for this project MUST reside inside a single top-level master folder named after the user's defined theme. From Step 2 onwards, you MUST loop over each branch deduced in Step 1, executing deep reasoning and generating specific outputs documents **INSIDE each respective `[ThemeName]/schemes/branch_{X}/` folder**. This creates a massive, divergent matrix of research files inside the master theme envelope. Ensure absolutely **no empty folders** remain at the end of the project. Do not pause execution unless requiring human fallback.
 
-### Step 1: The Bi-Phase Brainstorming Loop (双相头脑风暴循环)
-- **Phase A (Free Divergence)**: Conduct a completely free, unconstrained brainstorm based purely on the raw abstract theme. Deduce initial speculative "alpha" scheme branches.
-- **Phase B (Academic Grounding)**: Pause divergence. Check if a root `_research_pdfs/` or `[ThemeName]/_research_pdfs/` contains user-provided PDFs/markdown book lists. If missing, use `browser_subagent` to download foundational literature to `[ThemeName]/_research_pdfs/`. Execute `python scripts/extract_pdf_vision.py [ThemeName]/_research_pdfs [ThemeName]/_extracted_images`. Read these texts and images to grasp the strict theoretical limits.
-- **Phase C (Constrained Re-Brainstorming)**: Loop back to brainstorming. Confront your alpha branches with the rigorous academic bounds you just digested. Mutate or radically refine them to deduce the **FINAL 3 to 5 mutually exclusive scheme branches**.
-- **Structure**: *Now* execute `python scripts/build_project_tree.py "[ThemeName]" "[Branch1]" "[Branch2]" ...` substituting the sanitized theme name and your FINAL deduced branch names. This scaffolds the `[ThemeName]/schemes/branch_X/` architecture.
-- **Document**: Output `01_biphase_brainstorming.md` at the `[ThemeName]/` root directory.
+### Step 1: The Dual-State Brainstorming Matrix (双态头脑风暴大矩阵)
+- **State A (Free Divergence)**: Conduct a completely free, unconstrained brainstorm based purely on the raw abstract theme. Deduce 2-3 independent **"Free-State"** scheme branches.
+- **Academic Grounding**: Pause divergence. Check if a root `_research_pdfs/` or `[ThemeName]/_research_pdfs/` contains user-provided PDFs/book lists. If missing, use `browser_subagent` to download foundational literature to `[ThemeName]/_research_pdfs/`. Execute `python scripts/extract_pdf_vision.py [ThemeName]/_research_pdfs [ThemeName]/_extracted_images`. Read these texts/images to grasp strict academic limits.
+- **State B (Constrained Divergence)**: Conduct a *second*, completely independent brainstorm strictly bound by the academic limits you just digested. Deduce 2-3 separate **"Constrained-State"** scheme branches.
+- **Consolidation**: Do NOT overwrite State A. Treat the Free-State and Constrained-State branches as parallel universes. Organize and combine them, merging only obviously overlapping concepts. You will proceed with 4-6 distinct, parallel scheme branches encompassing both pure freedom and rigorous constraint.
+- **Structure**: Execute `python scripts/build_project_tree.py "[ThemeName]" "[Free_Branch1]" "[Constrained_Branch1]" ...` substituting the sanitized theme name and *all* your consolidated dual-state branch names. This scaffolds the massive `[ThemeName]/schemes/branch_X/` architecture.
+- **Document**: Output `01_dual_state_brainstorming.md` at the `[ThemeName]/` root directory.
 
 ### Step 2: Branch-Specific Multimodal Analysis (分支特定沉浸解析)
 - **Branch-Specific Reading**: Now that the tree is structurally built, loop over EVERY final branch. Use `view_file` to extensively re-read the global PDFs and extracted images precisely through the theoretical lens of *that specific branch*.
