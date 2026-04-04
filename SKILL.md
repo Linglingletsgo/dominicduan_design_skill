@@ -24,8 +24,11 @@ Before executing the workflow, you MUST present the defaults and ask the user fo
 
 ## The 6-Step Fully Automated Workflow
 
-**CRITICAL RULE: TREE-STRUCTURED DOCUMENTATION MATRIX**
+**CRITICAL RULE 1: TREE-STRUCTURED DOCUMENTATION MATRIX**
 Every file and folder for this project MUST reside inside a single top-level master folder named after the user's defined theme. From Step 2 onwards, you MUST loop over each branch deduced in Step 1, executing deep reasoning and generating specific outputs documents **INSIDE each respective `[ThemeName]/schemes/branch_{X}/` folder**. This creates a massive, divergent matrix of research files inside the master theme envelope. Ensure absolutely **no empty folders** remain at the end of the project. Do not pause execution unless requiring human fallback.
+
+**CRITICAL RULE 2: MANDATORY LANGUAGE PROTOCOL**
+All final markdown outputs, deductions, and technical documentation MUST be generated exclusively in **Chinese**. However, all proper nouns, specialized academic/philosophical concepts, and technical terminologies MUST be annotated with their original English terms in parentheses (e.g., 后人类主义 (Posthumanism), 无器官身体 (Body without Organs)).
 
 ### Step 1: The Dual-State Brainstorming Matrix (双态头脑风暴大矩阵)
 - **State A (Free Divergence)**: Conduct a completely free, unconstrained brainstorm based purely on the raw abstract theme. Deduce exactly **5 independent "Free-State"** scheme branches.
