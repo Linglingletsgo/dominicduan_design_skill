@@ -6,8 +6,7 @@ def build_tree(branches):
     base_dirs = [
         "_research_pdfs",
         "_extracted_images",
-        "_inspiration_images",
-        "docs"
+        "_inspiration_images"
     ]
     
     # Create base infra

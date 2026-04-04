@@ -24,52 +24,43 @@ Before executing the workflow, you MUST present the defaults and ask the user fo
 
 ## The 6-Step Fully Automated Workflow
 
-**CRITICAL RULE: FULL AUTOMATION & DEEP THINKING**
-You must execute all 6 steps continuously and produce markdown artifacts at each step. **DO NOT stop and ask the user for permission to proceed to the next step.** (Pause only in Step 2 if you need the user to manually bypass anti-bot mechanisms). 
-In every step, you MUST use extensive `<thinking>` blocks to guarantee **deep philosophical reasoning and maximum branch divergence** before outputting your findings. 
+**CRITICAL RULE: TREE-STRUCTURED DOCUMENTATION MATRIX**
+From Step 2 onwards, you MUST NOT write generic global documents. You must loop over each branch deduced in Step 1, executing deep reasoning and generating specific outputs documents **INSIDE each respective `schemes/branch_{X}/` folder**. This creates a massive, divergent matrix of research files. Ensure absolutely **no empty folders** remain at the end of the project. Do not pause execution unless requiring human fallback.
 
 ### Step 1: Context Building & Radical Divergence (语境构建与发散)
-- **Action**: Conduct keyword divergence based strictly on the user's defined theme and the philosophical context.
-- **Divergence**: You MUST deduce 3 to 5 mutually exclusive, radical scheme branches (exploring different extremes of the theory).
-- **Structure**: Execute `python scripts/build_project_tree.py "Branch1" "Branch2" ...` substituting your deduced branches. This script guarantees the core directories and multi-branch infrastructure are built instantly and accurately.
-- **Document**: Output to `01_brainstorming_and_divergence.md`.
+- **Action**: Conduct keyword divergence based strictly on the defined theme and philosophy.
+- **Divergence**: You MUST deduce 3 to 5 mutually exclusive, radical scheme branches.
+- **Structure**: Execute `python scripts/build_project_tree.py "[Branch1]" "[Branch2]" ...` substituting your deduced names. This automatically scaffolds the exact `schemes/branch_X/` architecture.
+- **Document**: Output `01_brainstorming_and_divergence.md` at the root directory.
 
-### Step 2: Academic Research & Multimodal Literature Analysis (学术调研与多模态文献解析)
-- **Action (Web Search)**: Use your `browser_subagent` to navigate to **https://sci-bot.ru/** for academic literature (theory, philosophy) search and locate specific DOIs based on Step 1. 
-- **Action (Automated Web Download)**: 
-  - For books: Use the `browser_subagent` to navigate to **https://z-library.sk/**. Log in using the credentials from initialization, simulate manual clicks to search for and download target books.
-  - For papers: Use the `browser_subagent` to navigate to **https://www.sci-hub.st/**, enter the DOIs, and download the PDFs.
-  - Save all files to `_research_pdfs/`.
-- **Fault Tolerance**: If the `browser_subagent` completely fails due to unconquerable captchas, stop, list the required URLs, ask the user to manually download them into `_research_pdfs/`. Pause only for this action.
-- **Image Extraction**: Execute `python scripts/extract_pdf_vision.py _research_pdfs _extracted_images` to bulk-extract all graphics from the PDFs automatically. Do NOT hand-write extraction code.
-- **Action (Multimodal Analysis)**: Once PDFs are read textually, use `view_file` to directly view the extracted images. Analyze the visual semantics, textures, and structural logic. 
-- **Document**: Output to `02_literature_analysis.md`.
+### Step 2: Academic Research (Shared) & Branch-Specific Multimodal Analysis
+- **Action (Shared Research)**: Use `browser_subagent` to download DOIs/books to `_research_pdfs/`. Pause ONLY if captchas completely block you, asking the user to manually provide the PDFs.
+- **Image Extraction (Shared)**: Execute `python scripts/extract_pdf_vision.py _research_pdfs _extracted_images`.
+- **Branch-Specific Analysis**: For EVERY branch deduced in Step 1, use `view_file` to read the global PDFs and extracted images precisely through the theoretical lens of *that specific branch*.
+- **Document**: Output `02_literature_analysis.md` **INSIDE each respective branch's folder** (e.g., `schemes/branch_1_A/02_literature_analysis.md`).
 
-### Step 3: Deep Philosophical Deduction & System Architecture (深层哲学推论与系统架构)
-- **Deep Thinking**: Spend extensive computational cycles explicitly connecting the literature from Step 2 to the core philosophy (e.g., Posthumanism, Deleuze).
-- **Deduction**: Establish the rigorous **Philosophical Deduction (哲学推论)**.
-- **Methodology**: Construct the precise **Research Methodology (研究方法论)**.
-- **Purpose**: Define the definitive **Research Purpose and Significance (研究目的与意义)**.
-- **Document**: Output to `03_philosophical_deduction_and_methodology.md`.
+### Step 3: Branch-Specific Deep Philosophical Deduction & System Architecture
+- **Deep Thinking**: Provide extensive `<thinking>` reasoning for each branch independently. 
+- **Deduction**: Establish the rigorous Philosophical Deduction, Research Methodology, and Research Purpose specifically tailored to the divergent bounds of each branch.
+- **Document**: Output `03_philosophical_deduction_and_methodology.md` **INSIDE each branch's folder**.
 
-### Step 4: Visual Research & Artist Critique (视觉化调研与艺术家批判)
-- **Action**: Investigate existing related art/design projects utilizing the research from Step 3.
-- **Critique**: Analyze what exact problems they solved, identify their theoretical/technical flaws, and locate room for innovation.
-- **Multimodal Critique**: Download related images to `_inspiration_images/`. Use `view_file` to critically dissect their existing visual languages.
-- **Visual Translation**: Strictly deduce the **Visual Translation Language (视觉转化语言)** for our project based on the philosophy.
-- **Document**: Output to `04_artist_case_studies_and_visual_language.md`.
+### Step 4: Branch-Specific Visual Research & Artist Critique
+- **Action**: For each branch, investigate existing related art projects.
+- **Multimodal Critique**: Download shared inspiration to `_inspiration_images/`. Critique them (`view_file`) based on the specific branch's philosophical angle.
+- **Visual Translation**: Deduce a unique **Visual Translation Language (视觉转化语言)** for each branch individually.
+- **Document**: Output `04_artist_case_studies_and_visual_language.md` **INSIDE each branch's folder**.
 
-### Step 5: Translation Boundaries & Technical Implementation (转化边界与技术推演)
-- **Action (Multimodal Synthesis without AIGC)**: Synthesize your deep visual and textual understanding. **Do NOT invoke any AIGC or image generation tools.** 
-- **Technical Mapping**: Translate the abstract concepts, visual translation language, and methodologies into precise, actionable technical architectures, systemic rulesets, and material semantics. Provide exact tech integration logic (e.g., hardware constraints, 3D/Physical logic).
-- **Iteration**: Outline the **Technical and Visual Implementation Paths (技术与视觉实现)** and map the **Iterative Loops (迭代循环)** required for realization.
-- **Document**: Output to `05_technical_implementation_paths.md`.
+### Step 5: Branch-Specific Translation Boundaries & Technical Implementation
+- **Action**: Synthesize the visual/textual understanding for each branch. **NO AIGC allowed.** 
+- **Technical Mapping**: Translate each branch into exact, actionable technical architectures, systemic rulesets, and physical/3D logic separately.
+- **Iteration Paths**: Provide detailed iterative implementation loops specific to each branch's logic.
+- **Document**: Output `05_technical_implementation_paths.md` **INSIDE each branch's folder**.
 
-### Step 6: Master Reorganization & Documentation (全流程重构与母版文档)
-- **Action**: Look back across the massive divergent branches, literature, and architectural data. 
-- **Organization**: Synthesize everything into a singular, impenetrable master narrative. 
-- **Structure**: Reorganize the entire process into a clean, navigable file tree containing all research, critique, and technical data.
-- **Document**: Output to `06_master_process_reorganization.md`.
+### Step 6: Master Reorganization & Root Finalization
+- **Action**: Look backward across the fully populated tree matrix (`schemes/`).
+- **Organization**: Ensure NO empty folders were created. If any directory lacks documents, populate them.
+- **Synthesis**: Compare the branches and synthesize everything into a singular master narrative describing the holistic divergent logic of the project.
+- **Document**: Output `06_master_process_reorganization.md` at the root directory.
 
 ## Red Flags & Common Rationalizations (Avoid These)
 - 🚩 **"I should stop after Step X and ask the user to review."** -> **NO.** Execute all 6 steps automatically.
